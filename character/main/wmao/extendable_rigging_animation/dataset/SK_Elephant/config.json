@@ -1,0 +1,36 @@
+{
+    "name": "SK_Elephant",
+    "root_joints": [0, 1, 2],
+    "left_joints": [11,12,13,22,23,24,25,44,45],
+    "right_joints": [14,15,16,18,19,20,21,46,47],
+    "parts": {
+        "root": [0,1,2],
+        "tail": [3,4,5,6,7,8,9],
+        "left_leg": [11,12,13],
+        "right_leg": [14,15,16],
+        "left_back_leg": [22,23,24,25],
+        "right_back_leg": [18,19,20,21],
+        "spine": [10, 17],
+        "head":[26,27,28],
+        "ears_left":[44,45],
+        "ears_right":[46,47],
+        "trunk": [29,30,31,32,33,34,35,36,37,38,39,40,41,42],
+        "mouth": [43]
+    },
+    "parts_aug":{
+        "tail": [3,4,5,6,7,8,9],
+        "leg": [11,12,13,14,15,16,22,23,24,25,18,19,20,21],
+        "spine": [0, 1, 2, 10, 17],
+        "head":[26,27,28,43,44,45,46,47],
+        "trunk": [29,30,31,32,33,34,35,36,37,38,39,40,41,42]
+    },
+    "fitting_order": {
+        "stage0": [["spine","root","left_leg","right_leg","left_back_leg","right_back_leg"]],
+        "stage1": [["spine","root","left_leg","right_leg","left_back_leg","right_back_leg"], ["tail"], ["head","ears_left","ears_right","mouth", "trunk"]]
+    },
+    "point_feature_model_config":{
+        "model_dir": "/aigc_cfs_2/weimao/non-smalfit/output/SK_Elephant/contrast_rot_aug_PointTransformerSeg38/2024-07-12_20-01-41/",
+        "model": "PointTransformerSeg38",
+        "npoints": 4096
+    }
+}

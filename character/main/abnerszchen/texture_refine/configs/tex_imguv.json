@@ -1,0 +1,14 @@
+{
+    "mcwy": {
+        "in_model_path": "/aigc_cfs_3/sz/result/tex_img_uv/g8/mcwy2_img",
+        "in_sd_path": "/aigc_cfs/model/stable-diffusion-v1-5",
+        "ip_adapter_model_path": "/aigc_cfs/model/IP-Adapter",
+        "log_root_dir": "/aigc_cfs_3/sz/server/log/mcwy_debug"
+    },
+    "lowpoly": {
+        "in_model_path": "/aigc_cfs_3/sz/result/tex_img_uv/g1/lowpoly_debug",
+        "in_sd_path": "/aigc_cfs/model/stable-diffusion-v1-5",
+        "ip_adapter_model_path": "/aigc_cfs/model/IP-Adapter",
+        "log_root_dir": "/aigc_cfs_3/sz/server/log/lowpoly_debug"
+    }
+}

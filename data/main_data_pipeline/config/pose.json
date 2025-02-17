@@ -1,0 +1,201 @@
+{
+  "RSVC": {
+    "ortho_scale": 2.2,
+    "ortho_radius": 4.0,
+    "3view_target_number": 3,
+    "3view_target_elevation_range": {
+      "start": -15.0,
+      "end": 30.0
+    },
+    "3view_target_elevation_perturb_range": {
+      "start": -2.0,
+      "end": 2.0
+    },
+    "3view_target_azimuth_range": {
+      "start": 0,
+      "end": 360.0
+    },
+    "condition_camera_number": 32,
+    "condition_partition": 2,
+    "condition_elevation_range": {
+      "start": -15.0,
+      "end": 30.0
+    },
+    "condition_azimuth_range": {
+      "start": 0.0,
+      "end": 360.0
+    },
+    "azimuth_list": [
+      0,
+      90,
+      180,
+      270,
+      0,
+      90,
+      180,
+      270,
+      0,
+      90,
+      180,
+      270
+    ],
+    "elevation_list": [
+      0,
+      0,
+      0,
+      0,
+      -90,
+      -90,
+      -90,
+      -90,
+      90,
+      90,
+      90,
+      90
+    ]
+  },
+  "RC": {
+    "ortho_scale": 2.2,
+    "ortho_radius": 4.0,
+    "image_percentage": 0.95,
+    "condition_camera_number": 32,
+    "condition_partition": 4,
+    "partition_angle_list": [
+      {
+        "start": -45.0,
+        "end": 0.0
+      },
+      {
+        "start": 0.0,
+        "end": 45.0
+      },
+      {
+        "start": 45.0,
+        "end": 90.0
+      },
+      {
+        "start": 90.0,
+        "end": 135.0
+      },
+      {
+        "start": 135.0,
+        "end": 180.0
+      },
+      {
+        "start": 180.0,
+        "end": 225.0
+      },
+      {
+        "start": 225.0,
+        "end": 270.0
+      },
+      {
+        "start": 270.0,
+        "end": 3150.0
+      }
+    ],
+    "partition_camera_number_list": [
+      16,
+      16,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "condition_elevation_range": {
+      "start": -5.0,
+      "end": 30.0
+    },
+    "condition_fov_range": {
+      "start": 20.0,
+      "end": 70.0
+    },
+    "condition_azimuth_range": {
+      "start": -90.0,
+      "end": 270.0
+    },
+    "azimuth_list": [
+      0,
+      90,
+      180,
+      270,
+      0,
+      0
+    ],
+    "elevation_list": [
+      0,
+      0,
+      0,
+      0,
+      -90,
+      90
+    ]
+  },
+  "RTriVC": {
+    "ortho_radius": 4.0,
+    "image_percentage": 0.95,
+    "persp_y_only_number": 2,
+    "ortho_y_only_number": 2,
+    "y_aux_camera_number": 3,
+    "perspective_radius_percentage": 0.8,
+    "perspective_fov_start": 20.0,
+    "perspective_fov_end": 70.0,
+    "perturb_azimuth_range": {
+      "start": -2,
+      "end": 2
+    },
+    "perturb_elevation_range": {
+      "start": -2,
+      "end": 2
+    },
+    "aux_azimuth_range": {
+      "start": 0,
+      "end": 360
+    },
+    "aux_elevation_range": {
+      "start": -15,
+      "end": 30
+    },
+    "aux_perturb_azimuth_range": {
+      "start": -5,
+      "end": 5
+    },
+    "aux_perturb_elevation_range": {
+      "start": -5,
+      "end": 5
+    },
+    "first_identity": true,
+    "equator_number": 2,
+    "equator_range": {
+      "start": -60.0,
+      "end": 60.0
+    },
+    "all_direction_number": 0,
+    "all_direction_range": {
+      "xy_start": -10.0,
+      "xy_end": 30.0,
+      "z_start": -60.0,
+      "z_end": 60.0
+    },
+    "azimuth_list": [
+      0,
+      90,
+      180,
+      270
+    ],
+    "elevation_list": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ortho_scale_list": [
+      2.2,
+      2.2,
+      2.2,
+      2.2
+    ]
+  }
+}

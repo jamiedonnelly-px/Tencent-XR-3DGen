@@ -1,0 +1,66 @@
+{
+  "Description" : "diffusion training (unconditional) on ShapeNet dataset with sdf vae latent",
+
+  "data_type" : "train",
+  "training_task": "diffusion_pix3d_cond",
+  "triplane_type" : "geosdf",
+  "num_epochs" : 50000,
+  "log_freq" : 50,
+  "lr_init" : 1e-6,
+  "lr" : 1e-4,
+  "final_lr" : 1e-5,
+  "warmup_steps": 10,
+  "stay_steps": 500,
+  "decay_steps" : 1000,
+  "final_lr_scale" : 0.04,
+  "patience": 5,
+  "save_path": "/aigc_cfs/trevorrkcui/exp_log/DiffusionSDF",
+
+
+  "data_config" : {
+    "dataset_type" : "diffusion_pix3d_cond",
+    "data_root": "/aigc_cfs_4/trevorrkcui/dataset/Benchmark/pix3d",
+    "dataset_json" : "/apdcephfs/private_trevorrkcui/DiffusionSDF/config/paper_stage2_diff_pix3d/dataset.json",
+    "resample": false,
+    "test_type": "test"
+  },
+
+  "decoder_config": {
+    "decoder_type" : "sdfgeo",
+    "config_json" : "/apdcephfs/private_trevorrkcui/DiffusionSDF/data/shapenet/all_cfs.json"
+  },
+
+  "vae_config": {
+    "vae_type" : "AutoencoderKL",
+    "kl_std": 0.25,
+    "kl_weight": 0.001,
+    "plane_shape": [3, 32, 128, 128],
+    "hidden_dims": [512, 512, 512, 512],
+    "hidden_dims_decoder": [512, 512, 512, 512],
+    "z_dim": 4,
+    "num_heads": 8,
+    "transform_depth": 1,
+    "load_from_pretrain": "/aigc_cfs_4/trevorrkcui/exp_log/DiffusionSDF/paper_stage1_pix3d/last.ckpt"
+    },
+
+  "diffusion_config": {
+    "diffusion_type" : "diffusion_vector",
+    "diffusion_specs" : {
+      "timesteps" : 1000,
+      "objective" : "pred_x0",
+      "loss_type" : "l2"
+      },
+      "diffusion_model_specs": {
+        "dim" : 1024,
+        "dim_in_out": 768,
+        "depth" : 4,
+        "ff_dropout" : 0.3,
+        "cond" : true,
+        "cross_attn" : true,
+        "cond_dropout":true,
+        "drop_cond": 2,
+        "image_feature_dim" : 1024
+      },
+    "load_from_pretrain" : "/aigc_cfs/trevorrkcui/exp_log/DiffusionSDF/paper_stage2_diff_pix3d/epoch=49999.ckpt"
+  }
+}

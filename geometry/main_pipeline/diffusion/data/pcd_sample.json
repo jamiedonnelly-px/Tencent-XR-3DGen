@@ -1,0 +1,14 @@
+{
+    "data": {
+      "objaverse": {
+        "0d0700a03ce5497cbb2e01b189866433": {
+          "GeoPcd": "/data/objaverse/0d0700a03ce5497cbb2e01b189866433/proc_data/geometry",
+          "GeoPcd_train": "/local/data/objaverse/0d0700a03ce5497cbb2e01b189866433/GeoPcd"
+        },
+        "9dbe4cb122f44625986e85476f608808": {
+          "GeoPcd": "/data/objaverse/9dbe4cb122f44625986e85476f608808/proc_data/geometry",
+          "GeoPcd_train": "/local/data/objaverse/9dbe4cb122f44625986e85476f608808/GeoPcd"
+        }
+     }
+    }
+}

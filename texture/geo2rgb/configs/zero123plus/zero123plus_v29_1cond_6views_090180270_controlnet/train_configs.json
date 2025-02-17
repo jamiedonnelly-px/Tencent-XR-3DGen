@@ -1,0 +1,28 @@
+{
+  "Description" : ["training diffusion with zero123++"],
+  
+  "training_task": "zero123plus",
+
+  "data_config": {
+    "dataset_name" : "ObjaverseDatasetV3_2_090180270_controlnet",
+    "dataset_json" : "/aigc_cfs_2/neoshang/data/data_list/20241029_1view_condition/part1_16_proprietas_clothes_notail_remake_h20.json",
+    "pretrained_model_name_or_path": "/aigc_cfs_2/neoshang/models/zero123plus-v1.2",
+    "image_list_path_list": ["/apdcephfs_cq10/share_1615605/neoshang/data/coco_train2017_img_list.json",
+                            "/apdcephfs_cq10/share_1615605/neoshang/data/animal_img_list.json",
+                            "/apdcephfs_cq10/share_1615605/neoshang/data/imagenet_2012/images_path.json",
+                            "/apdcephfs_cq10/share_1615605/neoshang/data/winter21_whole/images_path.json"],
+    "load_from_cache_last": false,
+    "target_img_type": "shading",
+    "img_out_resolution": 512,
+    "view_idx_list": [[0, 1, 2, 3, 4, 8], [1, 2, 3, 0, 5, 9], [2, 3, 0, 1, 6, 10], [3, 0, 1, 2, 7, 11]],
+    "group_idx_list": [0],
+    "cond_idx_list": [[21],[22],[23],[24],[25],[26],[27],[28],[29],[30],[31],[32],[33],[34],[35],[36],[37],[38],[39],[40],[41],[42],[43],[44],[45],[46],[47],[48],[49],[50],[51],[52]],
+    "images_num_per_group": 53,
+    "num_validation_samples": 16
+  },
+
+  "diffusion_config":{
+    "weight_dtype": "bf16"
+  }
+
+}

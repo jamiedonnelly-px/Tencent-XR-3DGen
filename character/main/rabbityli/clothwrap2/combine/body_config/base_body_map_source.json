@@ -1,0 +1,141 @@
+{
+    "male": {
+        "mcwy2": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/MCWY2_M_T",
+            "profile": "/aigc_cfs_gdp/Asset/base_bodies/MCWY2_M_T/profile.png",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "mcwy2,  body shape is slim.   His head is slightly round."
+        },
+        "mcwy1": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/mcwy_male",
+            "profile": "/aigc_cfs_gdp/Asset/base_bodies/mcwy_male/profile.png",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "mcwy1, fitted body shape"
+        },
+        "pubg": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/pubg_male",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "pubg, muscular and athletic body shape, tall, confidence. Battle royale game"
+        },
+        "timer": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/timer_male",
+            "profile": "/aigc_cfs_gdp/Asset/base_bodies/timer_male/profile.png",
+            "shoes_scale": 3.0,
+            "use_shoes": false,
+            "use_hair": true,
+            "body_caption": "timer,   large head, kid"
+        },
+        "quest_average": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/quest_male_average",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "quest average,  average body "
+        },
+        "quest_slim": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/quest_male_slim",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "quest slim,   slim "
+        },
+        "quest_strong": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/quest_male_strong",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "quest_strong,    very strong body"
+        },
+        "quest_fat": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/quest_male_fat",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "quest, fat"
+        },
+        "yuanmeng": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/yuanmeng",
+            "shoes_scale": 3.0,
+            "use_shoes": false,
+            "use_hair": false,
+            "body_caption": "yuanmeng, cartoon sheep, round fat body shape like a ball, cute and fluffy. legs are short, yuanmeng"
+        },
+        "readyplayerme": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/readyplayerme_male",
+            "shoes_scale": 1.0
+        },
+        "readyplayerme_T": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/readyplayerme_male_T",
+            "shoes_scale": 1.0
+        },
+        "mcwy2_A": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/MCWY2_M_A",
+            "shoes_scale": 1.0
+        },
+        "mcwy1_old": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/mcwy1_M_old",
+            "shoes_scale": 1.0
+        }
+    },
+    "female": {
+        "mcwy2": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/MCWY2_F_T",
+            "profile": "/aigc_cfs_gdp/Asset/base_bodies/MCWY2_F_T/profile.png",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "very slim and thin body"
+        },
+        "mcwy1": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/mcwy_female",
+            "profile": "/aigc_cfs_gdp/Asset/base_bodies/mcwy_female/profile.png",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "fitted body shape, teenager"
+        },
+        "pubg": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/pubg_female",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "pubg, athletic, tall, Battle royale game"
+        },
+        "timer": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/timer_female",
+            "profile": "/aigc_cfs_gdp/Asset/base_bodies/timer_female/profile.png",
+            "shoes_scale": 3.0,
+            "use_shoes": false,
+            "use_hair": true,
+            "body_caption": "timer,  large head, kid"
+        },
+        "quest_average": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/quest_female_average",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "quest average, cartoon,   average body, fitted,  slender,  brown  skin, teenager"
+        },
+        "yuanmeng": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/yuanmeng",
+            "shoes_scale": 3.0,
+            "use_shoes": false,
+            "use_hair": false,
+            "body_caption": "yuanmeng, cartoon sheep, round fat body shape like a ball, cute and fluffy. legs are short, yuanmeng"
+        },
+        "mcwy2_A": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/MCWY2_F_A",
+            "shoes_scale": 1.0
+        },
+        "mcwy1_old": {
+            "path": "/aigc_cfs_gdp/Asset/base_bodies/mcwy1_M_old",
+            "shoes_scale": 1.0
+        }
+    }
+}

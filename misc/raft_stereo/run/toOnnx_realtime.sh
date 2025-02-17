@@ -1,0 +1,2 @@
+cd /apdcephfs/private_xiaqiangdai/workspace/RAFT-Stereo/
+python3   modelToOnnx_float.py --restore_ckpt models/raftstereo-realtime.pth --corr_implementation reg  --n_downsample 3 --n_gru_layers 2  --valid_iters 7  --shared_backbone  -l=datasets/Middlebury/MiddEval3/testF/*/im0.png -r=datasets/Middlebury/MiddEval3/testF/*/im1.png

@@ -1,0 +1,17 @@
+{
+    "model_config":{
+        "model_name": "zero123plus_v4.7",
+        "model_ckpt_dir": "/aigc_cfs_gdp/neoshang/release/zero123plus/zero123plus_v4.7",
+        "log_dir": "/aigc_cfs_gdp/neoshang/release/zero123plus/zero123plus_v4.7/log"
+    },
+
+    "tdmq_config": {
+        "token": "token",
+        "url": "http://pulsar-32j8nb4k7393.eap-ds7yxa7i.tdmq.ap-nj.internal.tencenttdmq.com:8080",
+        "topic": "persistent://pulsar-32j8nb4k7393/aigc-x-1/aigc-topic-zero123plus",
+        "backend_topic": "persistent://pulsar-32j8nb4k7393/aigc-x-1/aigc-topic-zero123plus-backend",
+        "redis_host":"",
+        "redis_port":"6379",
+        "redis_password": ""
+    }
+}

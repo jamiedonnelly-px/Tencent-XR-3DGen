@@ -1,0 +1,14 @@
+{
+    "data": {
+      "objaverse": {
+        "157f6304932a4559ad53a307f8f04022": {
+        "ImgDir": "/data/objaverse/157f6304932a4559ad53a307f8f04022/render_768_images",
+        "ImgDir_train": "/local/data/objaverse/157f6304932a4559ad53a307f8f04022/ImgDir"
+        },
+        "3fd1b9b5674d4bccbcce0a3a1405a824": {
+        "ImgDir": "/data/objaverse/3fd1b9b5674d4bccbcce0a3a1405a824/render_768_images",
+        "ImgDir_train": "/local/data/objaverse/3fd1b9b5674d4bccbcce0a3a1405a824/ImgDir"
+        }
+      }
+    }
+}

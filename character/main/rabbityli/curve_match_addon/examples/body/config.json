@@ -1,0 +1,26 @@
+{
+  "mesh_npy_path" : "/home/rabbityl/Desktop/curve_match_addon/examples/body/mesh_array.npy",
+  "curve_names" : [
+    "neck1_ring",
+    "neck2_ring",
+    "neck3_ring",
+    "neck3_chest_front",
+    "neck3_chest_back",
+    "chest_belly_front",
+    "chest_belly_back",
+    "belly_bottom_front",
+    "belly_bottom_back",
+    "ear_L2R",
+    "headtop_neck1",
+    "chest",
+    "belly_ring",
+    "arm1_ring",
+    "arm2_ring",
+    "arm3_ring",
+    "leg1_ring",
+    "leg2_ring",
+    "leg3_ring",
+    "foot_face",
+    "foot_bottom_end",
+    "foot_bottom_front"]
+}

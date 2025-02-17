@@ -1,0 +1,16 @@
+{
+    "thinkness": 0.0028240919287244,
+    "parts": 1,
+    "n_verts": [
+        600
+    ],
+    "voronoi_info_VFVF": [
+        [
+            534,
+            974,
+            534,
+            974
+        ]
+    ],
+    "valid_skinning_rate": 0.0
+}

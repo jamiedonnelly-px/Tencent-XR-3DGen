@@ -1,0 +1,1 @@
+python /aigc_cfs/tinatchen/code/auto_rig/layer/tdmq_interface/tdmq_consumer_combine.py --cfg_json configs/tdmq_combine_test.json --ip_port 9999

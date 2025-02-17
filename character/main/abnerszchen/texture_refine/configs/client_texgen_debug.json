@@ -1,0 +1,71 @@
+{
+    "uv_mcwy": {
+        "pipe_type": "tex_uv",
+        "tdmq": {
+            "token": "token",
+            "service_url": "http://pulsar-32j8nb4k7393.eap-ds7yxa7i.tdmq.ap-nj.internal.tencenttdmq.com:8080",
+            "generation_topic":"persistent://pulsar-32j8nb4k7393/aigc-x-1/debug-tex-generation",
+            "backend_topic":"pulsar-32j8nb4k7393/aigc-x-1/debug-backend-tex",
+            "redis_host":"server_addr",
+            "redis_port":"6379",
+            "redis_password": ""
+        },
+        "server_addr": "server_addr",
+        "server_description": "v100 tex xl mcwy2",
+        "out_mesh_format": "glb",
+        "active": true,
+        "uv_res": 1024,
+        "num_inference_steps": 20,
+        "guidance_scale": 8.0,
+        "controlnet_conditioning_scale": 0.8,
+        "ip_adapter_scale": 0.7,
+        "mix_ip_division_scale": 4.0,
+        "debug_save": true,
+        "log_root_dir": "/aigc_cfs_gdp/sz/texture_save"
+    },
+    "control_mcwy": {
+        "pipe_type": "tex_control",
+        "server_addr": "server_addr",
+        "server_description":"v100 tex control mcwy2",
+        "out_mesh_format": "glb",
+        "web_flatten_json": "/aigc_cfs_3/layer_tex/mcwy/merge/web_0416/web_flatten.json",
+        "active": true,
+        "uv_res": 512,
+        "num_inference_steps": 20,
+        "guidance_scale": 9.0,
+        "controlnet_conditioning_scale": 0.8,
+        "ip_adapter_scale": 1.0,        
+        "debug_save": true,
+        "log_root_dir": "/aigc_cfs_2/xiaqiangdai/project/objaverse_retrieve/data/texture_save"
+    },
+    "control_ready": {
+        "pipe_type": "tex_control",
+        "server_addr": "server_addr",
+        "server_description":"v100 tex control ready",
+        "out_mesh_format": "glb",
+        "web_flatten_json": "",
+        "active": false,
+        "uv_res": 512,
+        "num_inference_steps": 20,
+        "guidance_scale": 7.5,
+        "controlnet_conditioning_scale": 0.8,
+        "ip_adapter_scale": 1.0,            
+        "debug_save": true,
+        "log_root_dir": "/aigc_cfs_3/sz/server/tex_control/client_log/ready_gradio"
+    },    
+    "imguv_lowpoly": {
+        "pipe_type": "tex_imguv",
+        "server_addr": "server_addr",
+        "server_description":"v100 tex imguv lowpoly",
+        "out_mesh_format": "glb",
+        "web_flatten_json": "",
+        "active": false,
+        "uv_res": 512,
+        "num_inference_steps": 20,
+        "guidance_scale": 7.5,
+        "controlnet_conditioning_scale": 0.8,
+        "ip_adapter_scale": 1.0,    
+        "debug_save": true,
+        "log_root_dir": "/aigc_cfs_3/sz/server/tex_imguv/client_log/lowpoly_gradio"
+    }
+}

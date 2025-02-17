@@ -1,0 +1,20 @@
+{
+  "Description" : ["training diffusion with zero123++"],
+  
+  "training_task": "zero123plus",
+  "exp_save_dir": "/aigc_cfs_2/neoshang/code/diffusers_triplane/configs/zero123plus/zero123plus_v3",
+
+
+  "data_config" : {
+    "dataset_name" : "zero123plus_v2",
+    "dataset_json" : "/aigc_cfs_2/neoshang/data/data_list/zeri123plus_random_100k_20240428_neo_910b_image.json",
+    "pretrained_model_name_or_path": "/aigc_cfs_2/neoshang/code/diffusers_triplane/configs/zero123plus/zero123plus_v3",
+    "load_from_cache_last": false,
+    "img_out_resolution": 320,
+    "view_idx_list": [1,2,3,4,5,6],
+    "group_idx_list": [1,2,3,4],
+    "cond_idx_list": [7,8,9,10],
+    "images_num_per_group": 13,
+    "num_validation_samples": 16
+  }
+}

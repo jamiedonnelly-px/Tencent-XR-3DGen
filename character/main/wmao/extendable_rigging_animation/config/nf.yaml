@@ -1,0 +1,13 @@
+
+data_dir: /aigc_cfs_2/weimao/non-smalfit/dataset/SK_Elephant
+out_dir: /aigc_cfs_2/weimao/non-smalfit/output/SK_Elephant
+
+model_conf:
+  model_name: NF
+  num_layer: 5
+  with_prelu: True
+
+training:
+  lr: 1.e-2
+  batch_size: 4096
+  num_epoch: 200

@@ -1,0 +1,8 @@
+{
+  "mesh_npy_path" : "/home/rabbityl/Desktop/curve_match_addon/examples/face_tgt/face_tgt.npy",
+  "curve_names" : [
+    "Eye-Brow_Left",
+    "Eye-Brow_Right",
+    "Nose-top2bot"
+  ]
+}

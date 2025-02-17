@@ -1,0 +1,30 @@
+{
+  "Description" : ["training diffusion with zero123++"],
+  
+  "training_task": "zero123plus",
+  "exp_save_dir": "/aigc_cfs_2/neoshang/code/diffusers_triplane/configs/zero123plus/zero123plus_v4.4.1",
+
+  "data_config": {
+    "dataset_name" : "zero123plus_v2_h5",
+    "img_out_resolution": 256,
+    "pretrained_model_name_or_path": "/aigc_cfs_2/neoshang/code/diffusers_triplane/configs/zero123plus/zero123plus_v4.4.1",
+    "target_type": "shading",
+    "train_data": {
+        "data_json": "/aigc_cfs_2/neoshang/data/data_list/23May18_w3d_mmd_fixref7src_softlight_singlerotation.json",
+        "cluster": "cfs",
+        "images_only": true,
+        "img_size": 256,
+        "background": "white",
+        "classe_embeddings": [
+            {"normal": [1,0,0,0]},
+            {"color": [0,1,0,0]},
+            {"albedo": [0,0,1,0]},
+            {"xyz": [0,0,0,1]}
+        ],
+        "target_augmentation": {
+            "scale_adjustment": [0.75, 1.08]
+        },
+        "augment_cond_bg": true
+    }
+  }
+}

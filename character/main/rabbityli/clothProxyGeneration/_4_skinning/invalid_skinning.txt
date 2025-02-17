@@ -1,0 +1,3 @@
+/aigc_cfs_gdp/Asset/clothes/daz/decimate/10k/mesh/DAZ_DAZ_Top/DAZ_ROC_All__top_Top/merge_mtl/combined.obj
+/aigc_cfs_gdp/Asset/clothes/daz/decimate/10k/mesh/DAZ_DAZ_Top/DAZ_ROC_All__top_Top/merge_mtl/combined.obj
+/aigc_cfs_gdp/Asset/clothes/daz/decimate/10k/mesh/DAZ_DAZ_Top/DAZ_Shadow_Thief___Outfit__top_Top/merge_mtl/combined.obj

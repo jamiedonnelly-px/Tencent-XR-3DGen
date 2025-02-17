@@ -1,0 +1,8 @@
+{
+    "Token":"z0dKHCRu5C7ebDokVy3uJg",
+    "business_flag": "XR_Perception",
+    "model_local_file_path": "/apdcephfs/private_xiaqiangdai/workspace/RAFT-Stereo/run",
+    "host_num": 1,
+    "host_gpu_num": 1,
+    "image_full_name": "mirrors.tencent.com/stereo/xiaqiang_test:latest"
+}

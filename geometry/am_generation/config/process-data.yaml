@@ -1,0 +1,19 @@
+
+output_dir: /apdcephfs_cq8/share_1615605/weizheliu/bpt-8k-8-16-200k
+data_json:  /aigc_cfs/weizhe/code/git_moa/ArtistCreatedMeshes/jsons/subset_8K.json
+cluster: cfs # or "910b" or "lanjing"
+quantization_bits: 7
+augment: True
+augment_num: 3
+pc_num: 4096
+block_size: 8
+offset_size: 16
+compressed: True
+special_token: -2
+use_special_block: True
+max_seq_len: 10000
+
+# chunk
+chunks: 10
+cur_inter: 0
+

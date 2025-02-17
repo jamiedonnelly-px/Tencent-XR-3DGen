@@ -1,0 +1,11 @@
+{
+    "mesh2image_extra_params": {
+        "mesh_process": "keep_raw",
+        "control_scale": 0.6,
+        "cfg_scale": 7.0,
+        "num_inference_steps": 20,
+        "ip_adapter_scale": 0.8
+    },
+    "blender_path": "/usr/blender-3.6.2-linux-x64/blender",
+    "log_root_dir": "/aigc_cfs_gdp/sz/server/gputool"
+}

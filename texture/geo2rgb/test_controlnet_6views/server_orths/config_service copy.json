@@ -1,0 +1,27 @@
+{
+    "service_name": "post_processing_d2rgb: debug",
+    "tdmq":
+    {
+        "token": "token",
+        "url": "http://pulsar-32j8nb4k7393.eap-ds7yxa7i.tdmq.ap-nj.internal.tencenttdmq.com:8080",
+        "to_service_topic": "persistent://pulsar-32j8nb4k7393/aigc-x-1/aigc-topic-d2rgb",
+        "to_backend_topic": "persistent://pulsar-32j8nb4k7393/aigc-x-1/aigc-topic-backend-d2rgb",
+        "to_service_subscription_name": "debug",
+        "to_backend_subscription_name": "debug"
+    },
+    "redis":
+    {
+        "host": "21.29.224.143",
+        "port": "6379",
+        "password": "Guokong615"
+    },
+    "data":
+    {
+        "pose_npy": "/aigc_cfs_2/zacheng/MMD_NPU_dmmd/tdmq/server/pose.npz",
+        "pipeline_old": "/aigc_cfs_2/zacheng/MMD_NPU_dmmd/pipeline_0618_new",
+        "num_tasks_old": 2,
+        "pipeline_new": "/aigc_cfs/xibinsong/code/MMD_NPU_code/MMD_NPU_depth_2_rgb/MMD_NPU/examples/mmd/outputs_npu4_val_aug_rgb/dmmd_20240614_multidataset_npu_fp32_drin_aug/pipeline-34000",
+        "num_tasks_new": 1,
+        "precision": "fp16"
+    }
+}

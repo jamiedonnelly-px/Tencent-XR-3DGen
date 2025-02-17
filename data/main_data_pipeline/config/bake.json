@@ -1,0 +1,10 @@
+{
+    "source_z_up_axis": true,
+    "destination_z_up_axis": true,
+    "cage_extrusion": 0.001,
+    "max_ray_distance": 0.01,
+    "emission_baking": false,
+    "scale_mesh": true,
+    "texture_image_width": 4096,
+    "texture_image_height": 4096
+}

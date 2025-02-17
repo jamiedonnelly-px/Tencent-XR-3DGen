@@ -1,0 +1,12 @@
+{
+    "pipe_type": "safety_checker",
+    "safety_path": "/aigc_cfs_gdp/model/stable-diffusion-safety-checker/",
+    "feature_extractor_path": "/aigc_cfs_gdp/model/clip-vit-base-patch32/",
+    "tdmq": {
+        "token": "token",
+        "service_url": "http://pulsar-32j8nb4k7393.eap-ds7yxa7i.tdmq.ap-nj.internal.tencenttdmq.com:8080",
+        "generation_topic":"persistent://pulsar-32j8nb4k7393/aigc-x-1/online-safety-checker",
+        "backend_topic":"pulsar-32j8nb4k7393/aigc-x-1/online-backend-safety-checker"
+    },        
+    "log_root_dir": "/aigc_cfs_gdp/sz/server/log/safety_checker"
+}

@@ -1,0 +1,138 @@
+{
+    "male": {
+        "mcwy2": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/MCWY2_M_T",
+            "profile": "/aigc_cfs/rabbityli/base_bodies/MCWY2_M_T/profile.png",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u4fee\u957f"
+        },
+        "mcwy1": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/mcwy_male",
+            "profile": "/aigc_cfs/rabbityli/base_bodies/mcwy_male/profile.png",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u5300\u79f0"
+        },
+        "pubg": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/pubg_male",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u6210\u5e74\u4eba"
+        },
+        "timer": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/timer_male",
+            "profile": "/aigc_cfs/rabbityli/base_bodies/timer_male/profile.png",
+            "shoes_scale": 3.0,
+            "use_shoes": false,
+            "use_hair": true,
+            "body_caption": "\u5c0f\u5b69\u513f"
+        },
+        "quest_average": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/quest_male_average",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u666e\u901a"
+        },
+        "quest_slim": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/quest_male_slim",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u7626\u5f31"
+        },
+        "quest_strong": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/quest_male_strong",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u5f3a\u58ee"
+        },
+        "quest_fat": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/quest_male_fat",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u80a5\u80d6"
+        },
+        "yuanmeng": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/yuanmeng",
+            "shoes_scale": 3.0,
+            "use_shoes": false,
+            "use_hair": false,
+            "body_caption": "\u5706\u6eda\u6eda, chubby, round, ball, goat, sheep"
+        }
+    },
+    "female": {
+        "mcwy2": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/MCWY2_F_T",
+            "profile": "/aigc_cfs/rabbityli/base_bodies/MCWY2_F_T/profile.png",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u4fee\u957f"
+        },
+        "mcwy1": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/mcwy_female",
+            "profile": "/aigc_cfs/rabbityli/base_bodies/mcwy_female/profile.png",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u5300\u79f0"
+        },
+        "pubg": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/pubg_female",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u6210\u5e74\u4eba"
+        },
+        "timer": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/timer_female",
+            "profile": "/aigc_cfs/rabbityli/base_bodies/timer_female/profile.png",
+            "shoes_scale": 3.0,
+            "use_shoes": false,
+            "use_hair": true,
+            "body_caption": "\u5c0f\u5b69\u513f"
+        },
+        "quest_average": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/quest_female_average",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u666e\u901a"
+        },
+        "quest_slim": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/quest_male_slim",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u7626\u5f31"
+        },
+        "quest_strong": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/quest_male_strong",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u5f3a\u58ee"
+        },
+        "quest_fat": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/quest_male_fat",
+            "shoes_scale": 1.0,
+            "use_shoes": true,
+            "use_hair": true,
+            "body_caption": "\u80a5\u80d6"
+        },
+        "yuanmeng": {
+            "path": "/aigc_cfs/rabbityli/base_bodies/yuanmeng",
+            "shoes_scale": 3.0,
+            "use_shoes": false,
+            "use_hair": false,
+            "body_caption": "\u5706\u6eda\u6eda, chubby, round, ball, goat, sheep"
+        }
+    }
+}

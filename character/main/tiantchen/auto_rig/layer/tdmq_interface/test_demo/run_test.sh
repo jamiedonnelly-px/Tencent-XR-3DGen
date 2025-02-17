@@ -1,0 +1,1 @@
+python /aigc_cfs/tinatchen/code/auto_rig/layer/tdmq_interface/easy_interface.py --client_cfg_json configs/tdmq_combine_test.json

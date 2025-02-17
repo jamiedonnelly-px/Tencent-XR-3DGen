@@ -1,0 +1,30 @@
+{
+  "tex_creator_weapon":{
+        "in_model_path" : "/aigc_cfs_3/sz/result/tex_creator/obja_gtD_srender_argum/g8/first_2k_b16a2_nsddpm",
+        "lrm_mode" : true,
+        "sample_cnt" : 1,
+        "pose_json" : "../../data/cams/cam_parameters_srender8.json",
+        "optim_cfg" : "optim_cfg_high.json"
+  },
+  "tex_creator_human_design":{
+    "in_model_path" : "/aigc_cfs_3/sz/result/tex_creator/human/pose8_argum/g8/design_2k_b16a2_nsddpm",
+    "lrm_mode" : false,
+    "sample_cnt" : 1,
+    "pose_json" : "../../data/cams/cam_parameters_human8.json",
+    "optim_cfg" : "optim_cfg_high.json"
+  },
+  "tex_creator_human_design9":{
+    "in_model_path" : "/aigc_cfs_3/sz/result/tex_creator/human/pose9_argum/g8/design_lowpoly_vroid_all_b16a2_nsddpm",
+    "lrm_mode" : false,
+    "sample_cnt" : 1,
+    "pose_json" : "../../data/cams/cam_parameters_human9.json",
+    "optim_cfg" : "optim_cfg_high.json"
+  },
+  "tex_creator_human_lowpoly":{
+    "in_model_path" : "/aigc_cfs_3/sz/result/tex_creator/human/low_poly/g8_5w_lpvd_b16a2_nsddpm",
+    "lrm_mode" : false,
+    "sample_cnt" : 1,
+    "pose_json" : "../../data/cams/cam_parameters_human7.json",
+    "optim_cfg" : "optim_cfg_high.json"
+  }
+}

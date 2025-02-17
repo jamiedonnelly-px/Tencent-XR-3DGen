@@ -1,0 +1,20 @@
+
+data_dir: /aigc_cfs_2/weimao/non-smalfit/dataset/SK_Elephant
+out_dir: /aigc_cfs_2/weimao/non-smalfit/output/SK_Elephant
+prior_dir: /aigc_cfs_2/weimao/non-smalfit/output/SK_Elephant/VAE/2024-06-17-12-26-42
+# point_feature_model_config:
+#   model_dir: /aigc_cfs_2/weimao/non-smalfit/output/SK_Elephant/contrast_rot_aug_PointTransformerSeg38/2024-06-27_18-56-19/
+#   model: PointTransformerSeg38
+#   npoints: 2048
+
+point_feature_model_config:
+  model_dir: /aigc_cfs_2/weimao/non-smalfit/output/SK_Elephant/contrast_rot_aug_PointTransformerSeg38/2024-07-12_20-01-41/
+  model: PointTransformerSeg38
+  npoints: 4096
+
+lrs: [2.e-2, 1.e-2, 1.e-1]
+maxiters: [200, 200, 200, 200]
+chamfer_weights: [1.0, 1.0, 1.0]
+pose_prior_weights: [0, 0.001, 0.005]
+scale_LR_weights: [0, 10.0, 10.0]
+scale_parts_weights: [0, 0.5, 0.5]

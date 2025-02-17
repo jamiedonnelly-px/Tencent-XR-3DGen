@@ -1,0 +1,41 @@
+{
+  "_class_name": "Zero123PlusPipeline",
+  "_diffusers_version": "0.24.0",
+  "_name_or_path": "sudo-ai/zero123plus-v1.1",
+  "feature_extractor_clip": [
+    "transformers",
+    "CLIPImageProcessor"
+  ],
+  "feature_extractor_vae": [
+    "transformers",
+    "CLIPImageProcessor"
+  ],
+  "safety_checker": [
+    null,
+    null
+  ],
+  "scheduler": [
+    "diffusers",
+    "EulerAncestralDiscreteScheduler"
+  ],
+  "text_encoder": [
+    "transformers",
+    "CLIPTextModel"
+  ],
+  "tokenizer": [
+    "transformers",
+    "CLIPTokenizer"
+  ],
+  "unet": [
+    "diffusers",
+    "UNet2DConditionModel"
+  ],
+  "vae": [
+    "diffusers",
+    "AutoencoderKL"
+  ],
+  "vision_encoder": [
+    "transformers",
+    "CLIPVisionModelWithProjection"
+  ]
+}

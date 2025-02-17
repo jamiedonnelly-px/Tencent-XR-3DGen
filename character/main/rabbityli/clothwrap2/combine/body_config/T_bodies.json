@@ -1,0 +1,31 @@
+{
+    "pubg": {
+        "path": "/aigc_cfs/rabbityli/base_bodies/pubg_male",
+        "shoes_scale": 1.0,
+        "use_shoes": true,
+        "use_hair": true,
+        "body_caption": "\u6210\u5e74\u4eba"
+    },
+    "timer": {
+        "path": "/aigc_cfs/rabbityli/base_bodies/timer_female",
+        "profile": "/aigc_cfs/rabbityli/base_bodies/timer_female/profile.png",
+        "shoes_scale": 3.0,
+        "use_shoes": false,
+        "use_hair": true,
+        "body_caption": "\u5c0f\u5b69\u513f"
+    },
+    "quest": {
+        "path": "/aigc_cfs/rabbityli/base_bodies/quest_male_strong",
+        "shoes_scale": 1.0,
+        "use_shoes": true,
+        "use_hair": true,
+        "body_caption": "\u5f3a\u58ee"
+    },
+    "yuanmeng": {
+        "path": "/aigc_cfs/rabbityli/base_bodies/yuanmeng",
+        "shoes_scale": 3.0,
+        "use_shoes": false,
+        "use_hair": false,
+        "body_caption": "\u5706\u6eda\u6eda, chubby, round, ball, goat, sheep"
+    }
+}

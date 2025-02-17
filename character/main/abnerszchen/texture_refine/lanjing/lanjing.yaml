@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: shenzhou-tex
+  name: shenzhou-tex-g1-2
+  namespace: ieg-aigc3d-4-game-gpu-nj
+  annotations:
+    federation.bkbcs.tencent.com/scheduling-strategy: dividing
+    
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shenzhou-tex
+  template:
+    metadata:
+      annotations:
+        randhostport.webhook.bkbcs.tencent.com: "true"
+        capabilities.bkbcs.tencent.com/mknod: "true" # 给Pod增加mknode capability
+        capabilities.bkbcs.tencent.com/sys-admin: "true" # 给Pod增加sys-admin capability
+        dev.bkbcs.tencent.com/fuse: "true" # 挂载fuse设备，方便ceph挂载
+        patchmount.webhook.bkbcs.tencent.com: cgroupfs # CPU视图隔离
+        ports.randhostport.webhook.bkbcs.tencent.com: "80,8080"
+        randhostport.webhook.bkbcs.tencent.com: "true"
+      labels:
+        app: shenzhou-tex
+    spec:
+      containers:
+        - args: 
+          - while true; do sleep 30; done;
+          command:
+          - /bin/bash
+          - -c
+          image: 'mirrors.tencent.com/diffrender/get3d:tri'
+          imagePullPolicy: Always
+          name: get3d-tri
+          ports:
+            - containerPort: 8080
+            - containerPort: 80
+              protocol: TCP
+          resources:
+            limits:
+              nvidia.com/gpu: 1
+            requests:
+              nvidia.com/gpu: 1
+          volumeMounts:
+            - mountPath: /dev/shm
+              name: cache-volume
+      volumes:
+      - emptyDir:
+          medium: Memory
+          sizeLimit: 12288Mi
+        name: cache-volume
+              

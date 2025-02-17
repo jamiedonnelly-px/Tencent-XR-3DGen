@@ -1,0 +1,17 @@
+{
+    "remesh_voxel_size": 0.001,
+    "solidify_thickness": 0.004,
+    "decimate_vertex_num": 50000,
+    "decimate_gradient_coefficient": 1.5,
+    "standard_height": 1.92,
+    "initial_height": 0.9,
+    "bake_image_width": 4096,
+    "bake_image_height": 4096,
+    "cage_extrusion": 0.001,
+    "max_ray_distance": 0.01,
+    "emission_baking": false,
+    "fix_transparency": false,
+    "fix_mode": [
+        "remove_alpha"
+    ]
+}

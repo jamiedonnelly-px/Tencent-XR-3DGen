@@ -1,0 +1,19 @@
+{
+    "mcwy": {
+        "server_addr": "server_addr",
+        "server_description":"v100",
+        "uv_res": 512,
+        "num_inference_steps": 20,
+        "guidance_scale": 7.5,
+        "debug_save": true,
+        "log_root_dir": "/aigc_cfs_3/sz/server/tex_imguv/client_log/mcwy_gradio"
+    },
+    "lowpoly": {
+        "server_addr": "server_addr",
+        "uv_res": 512,
+        "num_inference_steps": 20,
+        "guidance_scale": 7.5,
+        "debug_save": true,
+        "log_root_dir": "/aigc_cfs_3/sz/server/tex_imguv/client_log/mcwy_gradio"
+    }
+}

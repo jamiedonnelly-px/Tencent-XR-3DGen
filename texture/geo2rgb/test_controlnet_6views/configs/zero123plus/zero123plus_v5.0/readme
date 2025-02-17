@@ -1,0 +1,19 @@
+optimize:
+    self attention: yes
+    cross attention kv weight: yes
+    ramping_coefficients: yes
+
+
+pretrain model:
+    use origin stable diffusion 2 checkpoint as pretrain model
+
+target type:
+    shading
+
+data:
+    8 views use h5 from cfs, same as wonder3d
+    4 x 0 elevation + 4 x 30 elevation
+
+info:
+  train from stable diffusion 2 model
+  cond image with resolution 512

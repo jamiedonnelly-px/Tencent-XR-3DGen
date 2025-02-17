@@ -1,0 +1,44 @@
+{
+    "uv_mcwy": {
+        "pipe_type": "tex_uv",
+        "in_model_path": "/aigc_cfs_gdp/sz/runtime_model/xl_mcwy2_manual/g4_pre_pos_4class_blip_1e-5/checkpoint-2000",
+        "in_sd_path": "/aigc_cfs_gdp/model/stable-diffusion-xl-base-1.0",
+        "pretrained_vae_model_name_or_path": "/aigc_cfs_gdp/model/sdxl-vae-fp16-fix",
+        "ip_adapter_model_path": "/aigc_cfs_gdp/model/IP-Adapter",
+        "tdmq": {
+            "token": "token",
+            "service_url": "http://pulsar-32j8nb4k7393.eap-ds7yxa7i.tdmq.ap-nj.internal.tencenttdmq.com:8080",
+            "generation_topic":"persistent://pulsar-32j8nb4k7393/aigc-x-1/aigc-topic-tex-generation",
+            "backend_topic":"pulsar-32j8nb4k7393/aigc-x-1/aigc-topic-backend-tex"
+        },               
+        "log_root_dir": "/aigc_cfs_gdp/sz/server/log/uv_mcwy_debug"
+    },
+    "control_mcwy": {
+        "pipe_type": "tex_control",
+        "in_model_path": "/aigc_cfs_3/sz/result/tex_control_2024/mcwy2/newdataset_pre_long",
+        "in_sd_path": "/aigc_cfs/model/stable-diffusion-v1-5",
+        "ip_adapter_model_path": "/aigc_cfs/model/IP-Adapter",
+        "log_root_dir": "/aigc_cfs_3/sz/server/log/control_mcwy_debug"
+    },
+    "control_ready": {
+        "pipe_type": "tex_control",
+        "in_model_path": "/aigc_cfs_3/sz/result/tex_control_2024/ready/iblip_mask_top_pre_short",
+        "in_sd_path": "/aigc_cfs/model/stable-diffusion-v1-5",
+        "ip_adapter_model_path": "/aigc_cfs/model/IP-Adapter",
+        "log_root_dir": "/aigc_cfs_3/sz/server/log/control_ready_debug"
+    },
+    "imguv_mcwy": {
+        "pipe_type": "tex_imguv",
+        "in_model_path": "/aigc_cfs_3/sz/result/tex_img_uv/g8/mcwy2_img",
+        "in_sd_path": "/aigc_cfs/model/stable-diffusion-v1-5",
+        "ip_adapter_model_path": "/aigc_cfs/model/IP-Adapter",
+        "log_root_dir": "/aigc_cfs_3/sz/server/log/mcwy_debug"
+    },
+    "imguv_lowpoly": {
+        "pipe_type": "tex_imguv",
+        "in_model_path": "/aigc_cfs_3/sz/result/tex_img_uv/g1/lowpoly_debug",
+        "in_sd_path": "/aigc_cfs/model/stable-diffusion-v1-5",
+        "ip_adapter_model_path": "/aigc_cfs/model/IP-Adapter",
+        "log_root_dir": "/aigc_cfs_3/sz/server/log/lowpoly_debug"
+    }
+}

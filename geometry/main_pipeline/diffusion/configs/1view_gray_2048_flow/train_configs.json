@@ -1,0 +1,90 @@
+{
+  "Description" : ["training diffusion with 3D diffusion, with 2048 x 64 shape"],
+  
+  "training_task": "3D_diffusion",
+
+  "data_config" : {
+    "dataset_name" : "Diffusion3D_V6_1Cond",
+    "image_json_list": ["/data/data_list/rc_images/objaverse_complete_color_only_remake_h20.json",
+                        "/data/data_list/rc_images/proprietas_part1_color_only_remake_h20.json",
+                        "/data/data_list/rc_images/clothes_color_only_remake_h20.json",
+                        "/data/data_list/rc_images/3DFuture_color_only_remake_h20.json"],
+
+    "pcd_json_list": ["/data/data_list/pcd/objaverse_color_only_remake_h20.json",
+                      "/data/data_list/pcd_avatar_clear_hand/proprietas_1_color_only_remake_h20.json",
+                      "/data/data_list/pcd/clothes_thick_color_only_remake_h20.json",
+                      "/data/data_list/pcd/opensource_part17_to_part18_color_only_remake_h20.json",
+                      "/data/data_list/pcd/oxl_part2_to_part3_color_only.json",
+                      "/data/data_list/pcd/wow_color_only_remake_h20.json"
+                      ],
+    
+    "caption_json": "/data/caption/caption_data_20241028.json",
+    
+    "include_class_list": ["objaverse", "vroid", "mario", "Objaverse_Avatar", "DragonBall", "lowpoly", "odin", 
+                            "Designcenter_outfit", "Designcenter_top_bottom", 
+                            "daz", "daz_female", "daz_male", "daz_real_male", "fornite_female", "fornite_male", 
+                            "readyplayerme_top", "readyplayerme_hair", "readyplayerme_footwear", "readyplayerme_hat", "readyplayerme_bottom", 
+                            "VRoid_VRoid_Top", "VRoid_VRoid_Bottom", "VRoid_VRoid_Hair", "VRoid_VRoid_Shoe", 
+                            "DAZ_DAZ_Bottom", "DAZ_DAZ_Outfit", "DAZ_DAZ_Shoe", "DAZ_DAZ_Top",
+                            "MCWY_2_Hair", "MCWY_2_Shoe", "MCWY_2_Glove", "MCWY_2_Sock", "MCWY_2_Bottom", "MCWY_2_Dress", "MCWY_2_Top",
+                            "3DFUTURE"
+                          ],
+
+    "exclude_objaverse_list_path": "/data/data_list/objaverse/low_quality_ids.json",
+
+    "tail_json_path": "/code/data_process/3d/filtered_tail.json",
+
+    "cond_idx_list": [[6, 7, 8, 9, 10, 11, 12, 13]],
+    "images_num_per_group": 38,
+    "group_idx_list": [0],
+    "num_view_perobj": 7,
+
+    "target_align_type": "nearest_azimuth",
+
+    "std_reciprocal": 1.0,
+    "scale_type": "std_scale", 
+    "num_validation_sample": 16,
+
+    "sample_points_num": 32768,
+    "vae_encoder_points_num": 32768,
+    "load_from_cache_last": true,
+    "shuffle": false,
+    "resample": false
+  },
+
+  "diffusion_config": {
+    "model_name" : "transformer2d",
+    "input_length_max": 4096,
+    "in_channels": 64,
+    "num_layers": 28,
+    "attention_head_dim": 64,
+    "num_attention_heads": 24,
+    "joint_attention_dim": 4096,
+    "caption_projection_dim": 1024,
+    "pooled_projection_dim": 1280,
+    "out_channels": 64,
+
+    "latent_sequence_num" : 2048,
+    "weight_dtype": "bf16"
+  },
+  
+  "dino_config": {
+    "model_name": "dinov2-large",
+    "image_size": 518,
+    "pretrain_dir": "pretrain_ckpts/dinov2-large",
+    "gray_dino_feature_path": "configs/1view_gray_2048_flow/gray_image_local_dino_embedding.pt"
+  },
+
+  "clip_config": {
+    "model_name": "ViT-bigG-14",
+    "pretrain_dir": "pretrain_ckpts/CLIP-ViT-bigG-14-laion2B-39B-b160k",
+    "image_size": 224,
+    "gray_clip_feature_path": "configs/1view_gray_2048_flow/gray_image_global_clip_embedding.pt"
+  },
+
+  "vae_config": {
+    "vae_type" : "craftsman_vae",
+    "config_path": "pretrain_ckpts/crm_vae_pretrain/config.yaml",
+    "pretrain_path": "pretrain_ckpts/crm_vae_pretrain/model.ckpt"
+  }
+}

@@ -1,0 +1,122 @@
+{
+    "neck1_ring": {
+        "edge": [
+            [
+                8900,
+                8898
+            ],
+            [
+                8898,
+                8899
+            ],
+            [
+                8899,
+                8897
+            ],
+            [
+                8897,
+                8870
+            ],
+            [
+                8870,
+                8867
+            ],
+            [
+                8867,
+                8865
+            ]
+        ],
+        "edge_index": [
+            6891,
+            11922,
+            18646,
+            18647,
+            20412,
+            42514
+        ]
+    },
+    "neck2_ring": {
+        "edge": [],
+        "edge_index": []
+    },
+    "neck3_ring": {
+        "edge": [],
+        "edge_index": []
+    },
+    "neck3_chest_front": {
+        "edge": [],
+        "edge_index": []
+    },
+    "neck3_chest_back": {
+        "edge": [],
+        "edge_index": []
+    },
+    "chest_belly_front": {
+        "edge": [],
+        "edge_index": []
+    },
+    "chest_belly_back": {
+        "edge": [],
+        "edge_index": []
+    },
+    "belly_bottom_front": {
+        "edge": [],
+        "edge_index": []
+    },
+    "belly_bottom_back": {
+        "edge": [],
+        "edge_index": []
+    },
+    "ear_L2R": {
+        "edge": [],
+        "edge_index": []
+    },
+    "headtop_neck1": {
+        "edge": [],
+        "edge_index": []
+    },
+    "chest": {
+        "edge": [],
+        "edge_index": []
+    },
+    "belly_ring": {
+        "edge": [],
+        "edge_index": []
+    },
+    "arm1_ring": {
+        "edge": [],
+        "edge_index": []
+    },
+    "arm2_ring": {
+        "edge": [],
+        "edge_index": []
+    },
+    "arm3_ring": {
+        "edge": [],
+        "edge_index": []
+    },
+    "leg1_ring": {
+        "edge": [],
+        "edge_index": []
+    },
+    "leg2_ring": {
+        "edge": [],
+        "edge_index": []
+    },
+    "leg3_ring": {
+        "edge": [],
+        "edge_index": []
+    },
+    "foot_face": {
+        "edge": [],
+        "edge_index": []
+    },
+    "foot_bottom_end": {
+        "edge": [],
+        "edge_index": []
+    },
+    "foot_bottom_front": {
+        "edge": [],
+        "edge_index": []
+    }
+}

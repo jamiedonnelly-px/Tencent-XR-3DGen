@@ -1,0 +1,6 @@
+/aigc_cfs_3/layer_tex/mcwy/merge/append_manual_data/bake_filter_ok_one_kd.json
+/aigc_cfs_3/layer_tex/mcwy/merge/append_manual_data/myuv_filter_ok_multi_kd.json
+/aigc_cfs_3/layer_tex/mcwy/merge/append_manual_data/manual_multi_mtl_multi_kd_01_03_15_all/manual_multi_kd.json
+/aigc_cfs_3/layer_tex/mcwy/merge/append_manual_data/manual_multi_mtl_one_kd_d/manual_multi_mtl_one_kd_d.json
+/aigc_cfs_3/layer_tex/mcwy/merge/append_manual_data/manual_multi_mtl_multi_kd_d/manual_multi_kd_d.json
+/aigc_cfs_3/layer_tex/mcwy/merge/append_manual_data/manual_only_single_d/manual_only_single_d.json

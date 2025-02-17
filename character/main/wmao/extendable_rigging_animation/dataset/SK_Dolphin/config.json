@@ -1,0 +1,35 @@
+{
+    "name": "SK_Dolphin",
+    "root_joints": [0, 1, 2],
+    "left_joints": [7,14,15],
+    "right_joints": [6,16,17],
+    "parts": {
+        "root": [0,1,2],
+        "spine": [3],
+        "head": [4],
+        "jaw": [5],
+        "left_fin": [7],
+        "right_fin": [6],
+        "back_fin": [8],
+        "tail": [9,10,11,12,13],
+        "left_cauda_fin": [14,15],
+        "right_cauda_fin": [16,17]
+    },
+    "parts_aug":{
+        "tail": [8,9,10,11,12,13],
+        "cauda_fin": [14,15,16,17],
+        "spine": [0, 1, 2, 3, 4, 5],
+        "fin": [6, 7]
+    },
+    
+    "fitting_order": {
+        "stage0": [["head", "jaw", "back_fin", "tail"]],
+        "stage1": [["root","spine", "head","jaw", "left_fin","right_fin", "back_fin"], ["tail", "left_cauda_fin", "right_cauda_fin"]]
+    },
+
+    "point_feature_model_config":{
+        "model_dir": "/aigc_cfs_2/weimao/non-smalfit/output/SK_Dolphin/contrast_rot_aug_PointTransformerSeg38/2024-07-26_15-17-39",
+        "model": "PointTransformerSeg38",
+        "npoints": 4096
+    }
+}

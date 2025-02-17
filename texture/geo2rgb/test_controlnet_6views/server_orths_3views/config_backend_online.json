@@ -1,0 +1,18 @@
+{
+    "service_name": "post_processing_d2rgb: debug",
+    "tdmq":
+    {
+        "token": "token",
+        "url": "http://pulsar-32j8nb4k7393.eap-ds7yxa7i.tdmq.ap-nj.internal.tencenttdmq.com:8080",
+        "to_service_topic": "persistent://pulsar-32j8nb4k7393/aigc-x-1/online-d2rgb-3views",
+        "to_backend_topic": "persistent://pulsar-32j8nb4k7393/aigc-x-1/online-backend-d2rgb-3views",
+        "to_service_subscription_name": "debug",
+        "to_backend_subscription_name": "debug"
+    },
+    "redis":
+    {
+        "host": "21.29.224.143",
+        "port": "6379",
+        "password": "Guokong615"
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "fusion_resolution": 512,
+  "truncation_factor": 5.0,
+  "fusion_image_width": 800,
+  "fusion_view_number": 200,
+  "clean_minimal_face_number": 2000,
+  "decimate_vertex_num": 50000,
+  "decimate_gradient_coefficient": 1.5,
+  "standard_height": 1.92,
+  "initial_height": 0.9,
+  "bake_image_width": 6144,
+  "bake_image_height": 6144,
+  "cage_extrusion": 0.001,
+  "max_ray_distance": 0.01,
+  "emission_baking": false
+}

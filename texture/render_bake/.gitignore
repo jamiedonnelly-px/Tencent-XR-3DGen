@@ -1,0 +1,10 @@
+*.png
+*.jpg
+*.mtl
+*.obj
+*.glb
+output
+online_output
+out
+__pycache__
+history.json

@@ -1,0 +1,202 @@
+# data loader parameters
+data_json: /aigc_cfs_2/zacheng/new_datajsons/24Sep20_objaverse_02.json # dataset json
+# data_json: /aigc_cfs_2/zacheng/new_datajsons/23May05_LVISw3d_mmd_fixref7src_softlight_fullyrandomrotation.json # dataset json
+cluster: cfs
+images_only: false
+img_size: 512 # original image resolution is 512 for this dataset
+white_background: true # if false, normal maps have grey background and other images have black background; otherwise all have white backgrounds
+# vae_latent_dir: /data5/LRM_vae_h5/res256
+# vae_checkpoint_path: /data5/jiayuuyang/MMD/examples/mmd/pretrained/ckpts
+classe_embeddings: # one hot embeddings for image modality, ordering matters because multi-modality embeddings will be concatenated in this order
+  # Wonder3D
+  # - normal: [1,0] # normal
+  # - color: [0,1] # color or 'imgs_in'
+  # Ours
+  - normal: [1,0,0,0] # normal
+  - color: [0,1,0,0] # color or 'imgs_in'
+  - albedo: [0,0,1,0] # albedo
+  - xyz: [0,0,0,1] # xyz
+
+# point cloud config
+
+n_surface_pts: 2048 # number of surface points to sample, returned as "surface_points" and "surface_normals"
+n_near_surface_pts: 2048 # number of near surface points to sample, returned as "near_surface_points", "near_surface_visibility", "near_surface_sdf"
+n_space_pts: 2048 # online sample space points to sample, returned as "space_points", "space_visibility", "space_sdf"
+
+# sample point cloud SDF and visibility online
+online_sample_pcd: False # whether or not to sample points on the fly, or load pre-sampled point clouds
+
+online_sample_near_surface_std: 1e-2 # near surface perturbation std, following gauss distribution
+online_sample_n_visibility_rays: 128 # number of random rays used for testing per point visibility in all directions, applicable to near surface and space points
+
+offline_sample_pcd_strategy: consecutive # "consecutive" or "uniform" to specify how training pcds are selected among all 500k pre-sampled points. because all offline samples are shuffled and stored in chunked h5 files, "consecutive" local reads are much faster but less random while "uniform" is fully random
+
+load_mesh: False # whether or nor to load manifold meshes; use key "manifold_mesh_verts" and "manifold_mesh_faces" to access loaded mesh
+
+pcd_coordinate_system: "refcam, xyz" # a string that defines the coordinate convention of point cloud data including points and point normals
+# must be of format "STYLE,ORIENTATION" with a comma "," in between, defaults to "refcam,xyz"
+# STYLE can be either "refcam" or "object", if "refcam" pcd is defined relative to the reference camera, and if "object" coordinate system is fixed
+# ORIENTATION defines the style of the coordinate system, can be "y-up" or "z-up", or can be a string in the front-right-up convention:
+    #
+    #                up
+    #                |
+    #                |
+    #                |
+    #                 --------- right
+    #               / 
+    #              /           
+    #            front
+    #          
+    #           cam.forward
+    #           /
+    #        RefCam - cam.right
+    #          | 
+    #       cam.down
+    #
+    #  e.g. "xyz" means the +x is the front direction (the direction that points to reference camera), +y right, and +z up
+    #      and "-yxz" means -y is front, +x is right and +z up, aka. z-up
+    #      and "zxy" means +z is front, +x right and +y up, aka. y-up
+    #      note, that front-right-up is a right hand system
+
+
+ignore_hdri: True
+
+# custom_shading:
+#   light_directions: # defined in the normal coordinate system, with +x right, +y up and +z into camera
+#     - [0,0,-1]
+#     - [0,0,1]
+#     - [0,1,0]
+#   light_intensities:
+#     - 0.8
+#     - 0.8
+#     - 0.8
+# vae_latent_dir: /aigc_cfs_11/23May05_Objaverse+Avatar_mmd_fixref7src_vae_h5/res256 # /data5/LRM_vae_h5/res256
+# vae_checkpoint_path: /aigc_cfs_2/jiayuuyang/MMD/examples/mmd/pretrained/ckpts 
+
+
+# a new feature is that 
+# vae_latent_dir: /aigc_cfs_8/LRM_vae_h5/res256 # /data5/LRM_vae_h5/res256
+
+image_augmentation: # random augmentation example, comment out to disable
+
+#   - multiview: false
+#     modalities: [rgb, albedo, normal, xyz, mask]
+#     scale_adjustment: [0.9, 1.1] # random scaling relative to image size (e.g. [0.9, 1.1] means images are zoomed to 0.9x to 1.1x of original size around centre); note this transform will not be reflected in intrinsic matricies
+#     background_color: # final background color is accumulated
+#       grey: [0.5, 0.8] # controls grey background color 
+#       rgb: [-0.1, 0.2] # controls rgb background color
+#     background_noise: # adds a noise to image background
+#       std_grey: 0.04 # std for grey-scale noise
+#       std_rgb: 0.02 # std for color-scale noise
+#       resolution: 64 # resolution of noise image that is resized and added back to original image; greater values produce smaller speckles
+
+#     blur_adjustment: # perform a gaussian blur
+#       sigma: [0.002, 0.004] # range of gauss kernel std, relative to image size, bigger value to increase blur
+#       blur: [0.1, 0.5] # the gauss filtered image is then linearly combined with original image to produce the final blurred image
+#                    # this define the range of combining weight, with 0 giving original image and 1 giving gauss blurred image. or use negative value for image sharpening
+
+#   - multiview: false # whether this random augmentation will be uniformly applied to all views or individually randomised per view; true means uniform. default to false
+#     modalities: [rgb, albedo, normal, xyz, mask] # all these modalities will go through the same random augmentation, defaults to all modalities. if you want randomness per modality, define multiple augmentations with different modalities
+
+#     translate_adjustment: [-0.05, 0.05] # random shift relative to image size, e.g. [-0.1, 0.1] will randomly shift image at most 10% in both horizontal and vertical directions; note this transform will not be reflected in intrinsic matricies
+    
+#     # optional geometric transformations, remove any lines if you don't need
+#     elastic_deform: # deforms image by generating a random flow field that's locally smooth
+#       magnitude: [0, 0.2] # range of maginitude of flows, relative to image size, e.g. 0.1 means deform to at most 10% of image size
+#       smoothness: 0.1 # the flows are then spatially smoothed with a gauss blur, this defines the gauss kernel std relative to image size, bigger means smoother
+#       resolution: 64 # internal resolution used for flow map, this is upsampled to image resolution, smaller value means better effciency and smoother deform
+  
+  - multiview: false
+    modalities: [rgb]
+
+    scale_adjustment: [0.8, 1.25] # random scaling relative to image size (e.g. [0.9, 1.1] means images are zoomed to 0.9x to 1.1x of original size around centre); note this transform will not be reflected in intrinsic matricies
+    translate_adjustment: [-0.2, 0.2] # random shift relative to image size, e.g. [-0.1, 0.1] will randomly shift image at most 10% in both horizontal and vertical directions; note this transform will not be reflected in intrinsic matricies
+    
+    # optional geometric transformations, remove any lines if you don't need
+    elastic_deform: # deforms image by generating a random flow field that's locally smooth
+      magnitude: [0.05, 0.075] # range of maginitude of flows, relative to image size, e.g. 0.1 means deform to at most 10% of image size
+      smoothness: 0.025 # the flows are then spatially smoothed with a gauss blur, this defines the gauss kernel std relative to image size, bigger means smoother
+      resolution: 32 # internal resolution used for flow map, this is upsampled to image resolution, smaller value means better effciency and smoother deform
+  
+#     # optional color adjustment and image processing, remove any lines if you don't need
+#     exposure_adjustment: [0.8, 1.2] # range of exposure adjustment, >1 means brighter and <1 means darker
+#     gamma_adjustment: [0.7, 1.2] # range of gamma adjustment, gamma is non-negative, gamma<1 gives better dynamic range to shadows and gamma>1 better highlights
+#     brightness_adjustment: [0.9, 1.1] # range of random brightness adjustment factor in HSV space (e.g. [0.9, 1.1] means brightness is multipled by a random factor from 0.9 to 1.1)
+#     saturation_adjustment: [0.9, 1.1] # range of random saturation adjustment factor in HSV space (e.g. [0.9, 1.1] means saturation is multipled by a random factor from 0.9 to 1.1)
+#     hue_adjustment: [-0.1, 0.1] # range of random hue adjustment in HSV space, where range of [-0.5,0.5] means hue is purely random
+#     contrast_adjustment: [0.9, 1.1] # range of random contrast adjustment factor (e.g. [0.9, 1.1] means contrast is multipled by a factor of 0.9 to 1.1)
+#     blur_adjustment: # perform a gaussian blur
+#       sigma: [0, 0.003] # range of gauss kernel std, relative to image size, bigger value to increase blur
+#       blur: [0, 0.3] # the gauss filtered image is then linearly combined with original image to produce the final blurred image
+#                    # this define the range of combining weight, with 0 giving original image and 1 giving gauss blurred image. or use negative value for image sharpening
+  
+#   - multiview: false
+#     modalities: [albedo]
+
+#     scale_adjustment: [0.95, 1.05] # random scaling relative to image size (e.g. [0.9, 1.1] means images are zoomed to 0.9x to 1.1x of original size around centre); note this transform will not be reflected in intrinsic matricies
+#     translate_adjustment: [-0.05, 0.05] # random shift relative to image size, e.g. [-0.1, 0.1] will randomly shift image at most 10% in both horizontal and vertical directions; note this transform will not be reflected in intrinsic matricies
+    
+#     # optional geometric transformations, remove any lines if you don't need
+#     elastic_deform: # deforms image by generating a random flow field that's locally smooth
+#       magnitude: [0, 0.05] # range of maginitude of flows, relative to image size, e.g. 0.1 means deform to at most 10% of image size
+#       smoothness: 0.05 # the flows are then spatially smoothed with a gauss blur, this defines the gauss kernel std relative to image size, bigger means smoother
+#       resolution: 64 # internal resolution used for flow map, this is upsampled to image resolution, smaller value means better effciency and smoother deform
+  
+#     # optional color adjustment and image processing, remove any lines if you don't need
+#     exposure_adjustment: [0.9, 1.1] # range of exposure adjustment, >1 means brighter and <1 means darker
+#     gamma_adjustment: [0.8, 1.2] # range of gamma adjustment, gamma is non-negative, gamma<1 gives better dynamic range to shadows and gamma>1 better highlights
+#     brightness_adjustment: [0.9, 1.1] # range of random brightness adjustment factor in HSV space (e.g. [0.9, 1.1] means brightness is multipled by a random factor from 0.9 to 1.1)
+#     contrast_adjustment: [0.9, 1.1] # range of random contrast adjustment factor (e.g. [0.9, 1.1] means contrast is multipled by a factor of 0.9 to 1.1)
+#     blur_adjustment: # perform a gaussian blur
+#       sigma: [0, 0.003] # range of gauss kernel std, relative to image size, bigger value to increase blur
+#       blur: [0, 0.3] # the gauss filtered image is then linearly combined with original image to produce the final blurred image
+#                    # this define the range of combining weight, with 0 giving original image and 1 giving gauss blurred image. or use negative value for image sharpening
+      
+#   - multiview: false
+#     modalities: [normal]
+
+#     scale_adjustment: [0.95, 1.05] # random scaling relative to image size (e.g. [0.9, 1.1] means images are zoomed to 0.9x to 1.1x of original size around centre); note this transform will not be reflected in intrinsic matricies
+#     translate_adjustment: [-0.05, 0.05] # random shift relative to image size, e.g. [-0.1, 0.1] will randomly shift image at most 10% in both horizontal and vertical directions; note this transform will not be reflected in intrinsic matricies
+    
+#     # optional geometric transformations, remove any lines if you don't need
+#     elastic_deform: # deforms image by generating a random flow field that's locally smooth
+#       magnitude: [0, 0.05] # range of maginitude of flows, relative to image size, e.g. 0.1 means deform to at most 10% of image size
+#       smoothness: 0.05 # the flows are then spatially smoothed with a gauss blur, this defines the gauss kernel std relative to image size, bigger means smoother
+#       resolution: 64 # internal resolution used for flow map, this is upsampled to image resolution, smaller value means better effciency and smoother deform
+  
+#     # optional color adjustment and image processing, remove any lines if you don't need
+#     exposure_adjustment: [0.8, 1.2] # range of exposure adjustment, >1 means brighter and <1 means darker
+#     gamma_adjustment: [0.7, 1.2] # range of gamma adjustment, gamma is non-negative, gamma<1 gives better dynamic range to shadows and gamma>1 better highlights
+#     brightness_adjustment: [0.9, 1.1] # range of random brightness adjustment factor in HSV space (e.g. [0.9, 1.1] means brightness is multipled by a random factor from 0.9 to 1.1)
+#     saturation_adjustment: [0.9, 1.1] # range of random saturation adjustment factor in HSV space (e.g. [0.9, 1.1] means saturation is multipled by a random factor from 0.9 to 1.1)
+#     hue_adjustment: [-0.1, 0.1] # range of random hue adjustment in HSV space, where range of [-0.5,0.5] means hue is purely random
+#     contrast_adjustment: [0.9, 1.1] # range of random contrast adjustment factor (e.g. [0.9, 1.1] means contrast is multipled by a factor of 0.9 to 1.1)
+#     blur_adjustment: # perform a gaussian blur
+#       sigma: [0, 0.003] # range of gauss kernel std, relative to image size, bigger value to increase blur
+#       blur: [0, 0.3] # the gauss filtered image is then linearly combined with original image to produce the final blurred image
+#                    # this define the range of combining weight, with 0 giving original image and 1 giving gauss blurred image. or use negative value for image sharpening
+    
+#   - multiview: false
+#     modalities: [xyz]
+
+#     scale_adjustment: [0.95, 1.05] # random scaling relative to image size (e.g. [0.9, 1.1] means images are zoomed to 0.9x to 1.1x of original size around centre); note this transform will not be reflected in intrinsic matricies
+#     translate_adjustment: [-0.05, 0.05] # random shift relative to image size, e.g. [-0.1, 0.1] will randomly shift image at most 10% in both horizontal and vertical directions; note this transform will not be reflected in intrinsic matricies
+    
+#     # optional geometric transformations, remove any lines if you don't need
+#     elastic_deform: # deforms image by generating a random flow field that's locally smooth
+#       magnitude: [0, 0.05] # range of maginitude of flows, relative to image size, e.g. 0.1 means deform to at most 10% of image size
+#       smoothness: 0.05 # the flows are then spatially smoothed with a gauss blur, this defines the gauss kernel std relative to image size, bigger means smoother
+#       resolution: 64 # internal resolution used for flow map, this is upsampled to image resolution, smaller value means better effciency and smoother deform
+  
+#     # optional color adjustment and image processing, remove any lines if you don't need
+#     exposure_adjustment: [0.8, 1.2] # range of exposure adjustment, >1 means brighter and <1 means darker
+#     gamma_adjustment: [0.7, 1.2] # range of gamma adjustment, gamma is non-negative, gamma<1 gives better dynamic range to shadows and gamma>1 better highlights
+#     brightness_adjustment: [0.9, 1.1] # range of random brightness adjustment factor in HSV space (e.g. [0.9, 1.1] means brightness is multipled by a random factor from 0.9 to 1.1)
+#     saturation_adjustment: [0.9, 1.1] # range of random saturation adjustment factor in HSV space (e.g. [0.9, 1.1] means saturation is multipled by a random factor from 0.9 to 1.1)
+#     hue_adjustment: [-0.1, 0.1] # range of random hue adjustment in HSV space, where range of [-0.5,0.5] means hue is purely random
+#     contrast_adjustment: [0.9, 1.1] # range of random contrast adjustment factor (e.g. [0.9, 1.1] means contrast is multipled by a factor of 0.9 to 1.1)
+#     blur_adjustment: # perform a gaussian blur
+#       sigma: [0, 0.005] # range of gauss kernel std, relative to image size, bigger value to increase blur
+#       blur: [0.1, 0.3] # the gauss filtered image is then linearly combined with original image to produce the final blurred image
+#                    # this define the range of combining weight, with 0 giving original image and 1 giving gauss blurred image. or use negative value for image sharpening
+    

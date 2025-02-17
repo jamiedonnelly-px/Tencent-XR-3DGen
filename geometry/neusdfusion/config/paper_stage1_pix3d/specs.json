@@ -1,0 +1,60 @@
+{
+  "Description" : ["training vae_sdfcolor with 2k objects v20231105, with BetaVAERolloutTransformer_v2"],
+  
+  "training_task": "vae_sdfgeo",
+  "train_params": "vae",
+  "num_epochs" : 50000,
+  "log_freq" : 50,
+  "lr_init" : 1e-5,
+  "lr" : 1e-4,
+  "final_lr" : 4e-6,
+  "warmup_steps": 10,
+  "stay_steps": 300,
+  "decay_steps" : 300,
+  "final_lr_scale" : 0.04,
+  "patience": 5,
+  "precision": "32", 
+  "log_every_n_steps": 1,
+  "accumulate_grad_batches": 2,
+  "save_last": true,
+  "warmup": 3,
+  "enable_complie": false,
+  "save_path": "/aigc_cfs_4/trevorrkcui/exp_log/DiffusionSDF",
+
+  "decoder_config": {
+    "decoder_type" : "sdfgeo",
+    "config_json" : "/apdcephfs/private_trevorrkcui/DiffusionSDF/data/shapenet/all_cfs.json"
+  },
+
+  "vae_config": {
+    "vae_type" : "AutoencoderKL",
+    "kl_std": 0.25,
+    "kl_weight": 0.001,
+    "plane_shape": [3, 32, 128, 128],
+    "hidden_dims": [512, 512, 512, 512],
+    "hidden_dims_decoder": [512, 512, 512, 512],
+    "z_dim": 4,
+    "num_heads": 8,
+    "transform_depth": 1
+    },
+
+  "data_config" : {
+    "dataset_type": "sdf_sdfgeo",
+    "dataset_json" : "/apdcephfs/private_trevorrkcui/DiffusionSDF/data/pix3d/all_cfs.json",
+    "datasets": ["pix3d"],
+    "categories":[
+      "bookcase", "chair", "desk", "bed", "misc", "tool", "sofa", "table", "wardrobe" 
+    ],
+    "resample": false
+  },
+
+  "loss_config": {
+    "loss_eikonal_weight": 0.5,
+    "loss_surface_sdf_weight": 10.0,
+    "loss_normals_weight": 1.0,
+    "loss_psd_sdf_weight": 5.0,
+    "loss_color_weight": 0.0,
+    "loss_l1_weight": 0.1,
+    "loss_vae_weight": 1.0
+  }
+}

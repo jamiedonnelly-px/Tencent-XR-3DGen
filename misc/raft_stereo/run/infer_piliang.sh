@@ -1,0 +1,2 @@
+cd /apdcephfs/private_xiaqiangdai/workspace/RAFT-Stereo/
+python3 demo_ziyou_pliang.py --restore_ckpt models/raftstereo-eth3d.pth --corr_implementation alt --mixed_precision   --img_main_folder /apdcephfs_cq2/share_1615605/xiaqiangdai/ft_local/data_scene_xinye

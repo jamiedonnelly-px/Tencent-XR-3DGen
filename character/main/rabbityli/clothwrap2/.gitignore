@@ -1,0 +1,8 @@
+*.ply
+*.obj
+*.mtl
+.idea
+*.png
+*.tga
+*.exr
+*fbx

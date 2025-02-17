@@ -1,0 +1,20 @@
+{
+  "Description" : ["training diffusion with zero123++"],
+  
+  "training_task": "zero123plus",
+  "exp_save_dir": "/aigc_cfs_2/neoshang/code/diffusers_triplane/configs/zero123plus/zero123plus_v4.1",
+
+  "data_config": {
+    "dataset_name" : "zero123plus_v2",
+    "dataset_json" : "/aigc_cfs_11/Asset/list/color_only_wonder3d_26cameras_0503_with_point_cloud.json",
+    "pretrained_model_name_or_path": "/aigc_cfs_2/neoshang/models/zero123plus-v1.2",
+    "load_from_cache_last": true,
+    "img_out_resolution": 256,
+    "view_idx_list": [0,11,12,13,15,16,17,18],
+    "group_idx_list": [0,1,2,3,4,5],
+    "cond_idx_list": [0],
+    "images_num_per_group": 26,
+    "num_validation_samples": 16
+  }
+
+}

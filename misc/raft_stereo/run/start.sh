@@ -1,0 +1,3 @@
+cd /apdcephfs/private_xiaqiangdai/workspace/RAFT-Stereo/
+python3 demo_ziyou.py --restore_ckpt models/raftstereo-realtime.pth --corr_implementation reg --n_downsample 3 --n_gru_layers 2  --valid_iters 7  --shared_backbone  -l=/apdcephfs_cq2/share_1615605/xiaqiangdai/ft_local/data_scene_xinye/48613383505412/left/*.png  \
+-r=/apdcephfs_cq2/share_1615605/xiaqiangdai/ft_local/data_scene_xinye/48613383505412/right/*.png --output_directory ziyou_output
