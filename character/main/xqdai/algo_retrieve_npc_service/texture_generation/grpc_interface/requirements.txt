@@ -1,0 +1,8 @@
+# for train with tensorboard
+# protobuf==3.17.3
+# grpcio-tools==1.39.0
+
+# for our: python3 -m venv --system-site-packages grpc
+protobuf==4.25.2
+grpcio-tools==1.60.0
+easydict

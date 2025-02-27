@@ -1,0 +1,39 @@
+{
+    "build": {
+        "dockerfile": "../data/main_data_pipeline/docker/Dockerfile",
+        "context": "../data/main_data_pipeline/docker"
+    },
+	"runArgs": [
+		"--name=tmp-decimation-benchmark",
+        "--userns=keep-id",
+        "--security-opt=label=disable",
+		"--runtime=/usr/bin/crun",
+		"--group-add=keep-groups",
+		"--annotation=run.oci.keep_original_groups=1",
+		"--ipc=host",
+		"--cgroups=disabled",
+        "--gpus=all"
+	],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+    "workspaceFolder": "/workspace",
+    "mounts": [
+        "source=${localEnv:HOME}/.bash_history,target=/root/.bash_history,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/,target=/jamie.donnelly/,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+        "source=/mnt/,target=/mnt/,type=bind,consistency=cached"
+    ],
+    "remoteUser": "${env:USER}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+                "ms-python.vscode-pylance",
+				"ms-toolsai.jupyter",
+                "ms-vscode-remote.vscode-remote-extensionpack"
+			],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+		}
+	}
+}

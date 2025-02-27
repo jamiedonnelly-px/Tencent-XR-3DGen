@@ -1,0 +1,4 @@
+pulsar-client
+redis
+easydict
+psutil

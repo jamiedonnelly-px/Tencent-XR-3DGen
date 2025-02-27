@@ -39,6 +39,6 @@ RUN cd /root && git clone https://github.com/marian42/mesh_to_sdf && cd mesh_to_
 
 COPY occupancy_network /root/occupancy_network
 RUN cd /root &&  cd occupancy_network/external/mesh-fusion && \
-    cd libfusiongpu && mkdir build && cd build && cmake .. && make && cd .. && python setup.py build_ext --inplace && \
+    cd libfusiongpu && mkdir build && cd build && cmake .. && make -j8 && cd .. && python setup.py build_ext --inplace && \
     cd .. && cd librender && python setup.py build_ext --inplace && \
     cd .. && cd libmcubes && python setup.py build_ext --inplace
